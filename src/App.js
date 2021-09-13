@@ -2,6 +2,7 @@ import './App.css';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
 
+// Get props passed from parent component App
 function PrintLogo(props) {
   return (
     <>
@@ -26,6 +27,8 @@ function PrintLogo(props) {
   );
 }
 
+// Returns a Button react component based on the props passed from its parent App
+
 function Button(props) {
   return (
     <button
@@ -38,12 +41,12 @@ function Button(props) {
   );
 }
 
+// The parent component of PrintLogo and Button, which uses the hook usestate to set the color
+
 function App() {
   const [color, setColor] = useState(
     randomColor({ luminosity: 'random', hue: 'random' }),
   );
-
-  // const color = randomColor({ luminosity: 'random', hue: 'random' });
 
   return (
     <div className="App">
