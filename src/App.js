@@ -1,45 +1,8 @@
 import './App.css';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
-
-// Get props passed from parent component App
-function PrintLogo(props) {
-  return (
-    <>
-      <p style={props.style}>###############################</p>
-      <p style={props.style}>###############################</p>
-      <p style={props.style}>###############################</p>
-      <p style={props.style}>
-        #####&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#####
-      </p>
-      <p style={props.style}>
-        #####&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {props.color}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#####
-      </p>
-      <p style={props.style}>
-        #####&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#####
-      </p>
-      <p style={props.style}>###############################</p>
-      <p style={props.style}>###############################</p>
-      <p style={props.style}>###############################</p>
-    </>
-  );
-}
-
-// Returns a Button react component based on the props passed from its parent App
-
-function Button(props) {
-  return (
-    <button
-      onClick={() =>
-        props.val(randomColor({ luminosity: 'random', hue: 'random' }))
-      }
-    >
-      Click to change color
-    </button>
-  );
-}
+import { Button } from './button';
+import { Logo } from './logo.js';
 
 // The parent component of PrintLogo and Button, which uses the hook usestate to set the color
 
@@ -49,8 +12,27 @@ function App() {
   );
 
   return (
-    <div className="App">
-      <PrintLogo style={{ color: color }} color={color} />
+    <div
+      className="App"
+      style={{
+        'background-color': 'lightgrey',
+        display: 'block',
+        alignItems: 'center',
+        height: '1000px',
+        position: 'center',
+        border: '3px solid black',
+      }}
+    >
+      <Logo
+        style={{
+          color: color,
+
+          backgroundColor: 'lightgrey',
+          justifyContent: 'center',
+          justifyText: 'center',
+        }}
+        color={color}
+      />
       <Button val={setColor} />
     </div>
   );
