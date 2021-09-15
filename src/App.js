@@ -31,7 +31,7 @@ function App() {
         }}
         color={color}
       />
-      <Button value={setColor} />
+      <Button onClickChangeLogoColor={setColor} />
     </div>
   );
 }
