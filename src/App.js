@@ -1,8 +1,8 @@
 import './App.css';
 import randomColor from 'randomcolor';
 import { useState } from 'react';
-import { Button } from './button';
-import { Logo } from './logo.js';
+import { Button } from './Button';
+import { Logo } from './Logo.js';
 
 // The parent component of PrintLogo and Button, which uses the hook usestate to set the color
 
@@ -15,7 +15,10 @@ function App() {
     <div
       className="App"
       style={{
-        'background-color': 'lightgrey',
+        'background-color': randomColor({
+          luminosity: 'random',
+          hue: 'random',
+        }),
         display: 'block',
         alignItems: 'center',
         height: '1000px',
@@ -26,14 +29,13 @@ function App() {
       <Logo
         style={{
           color: color,
-
-          backgroundColor: 'lightgrey',
+          backgroundColor: randomColor({ luminosity: 'random', hue: 'random' }),
           justifyContent: 'center',
           justifyText: 'center',
         }}
         color={color}
       />
-      <Button val={setColor} />
+      <Button value={setColor} />
     </div>
   );
 }

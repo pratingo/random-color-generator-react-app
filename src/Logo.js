@@ -2,10 +2,8 @@
 
 export function Logo(props) {
   return (
-    <>
-      <p style={{ ...props.style, marginTop: '300px' }}>
-        ###############################
-      </p>
+    <div style={{ border: '1px solid black' }}>
+      <p style={{ ...props.style }}>###############################</p>
       <p style={props.style}>###############################</p>
       <p style={props.style}>###############################</p>
       <p style={props.style}>
@@ -22,6 +20,6 @@ export function Logo(props) {
       <p style={props.style}>###############################</p>
       <p style={props.style}>###############################</p>
       <p style={props.style}>###############################</p>
-    </>
+    </div>
   );
 }

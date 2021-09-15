@@ -7,7 +7,7 @@ export function Button(props) {
     <button
       style={{ backgroundColor: 'gold', 'border-radius': 5, padding: 10 }}
       onClick={() =>
-        props.val(randomColor({ luminosity: 'random', hue: 'random' }))
+        props.value(randomColor({ luminosity: 'random', hue: 'random' }))
       }
     >
       Click to change color
