@@ -15,21 +15,17 @@ function App() {
     <div
       className="App"
       style={{
-        'background-color': randomColor({
-          luminosity: 'random',
-          hue: 'random',
-        }),
+        'background-color': 'white',
         display: 'block',
         alignItems: 'center',
         height: '1000px',
         position: 'center',
-        border: '3px solid black',
       }}
     >
       <Logo
         style={{
           color: color,
-          backgroundColor: randomColor({ luminosity: 'random', hue: 'random' }),
+          backgroundColor: 'white',
           justifyContent: 'center',
           justifyText: 'center',
         }}

@@ -2,7 +2,7 @@
 
 export function Logo(props) {
   return (
-    <div style={{ border: '1px solid black' }}>
+    <div style={{ paddingTop: '50px' }}>
       <p style={{ ...props.style }}>###############################</p>
       <p style={props.style}>###############################</p>
       <p style={props.style}>###############################</p>
